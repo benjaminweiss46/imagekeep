@@ -4,9 +4,9 @@ import ProgressBar from './ProgressBar';
 const UploadForm = () => {
     const [file, setfile] = useState(null);
     const [error, setError] = useState(null);
-    const types = ['image/png','image/jpeg'];
+    const types = ['image/png','image/jpeg','image/jpg'];
     const changeHandler = (e) => {
-        let selected = e.target.file[0]; //can change to get multiple later
+        let selected = e.target.files[0]; //can change to get multiple later
         if (selected && types.includes(selected.type)) {
             setfile(selected);
             setError('');
@@ -14,7 +14,7 @@ const UploadForm = () => {
             setfile(null);
             setError('Please select a png or jpeg image');
         }
-    }
+    };
     return (
         <form>
             <input type="file" onChange={changeHandler}/>
@@ -25,6 +25,6 @@ const UploadForm = () => {
                 { file && <ProgressBar file={ file } setFile={ setfile }/>}
             </div>
         </form>
-    )
+    );
 }
 export default UploadForm;
