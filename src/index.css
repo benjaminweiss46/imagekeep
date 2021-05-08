@@ -11,7 +11,7 @@ body{
   font-family: "Noto Serif";
   color: var(--secondary);
 }
-.App{
+.ImageRepo{
   max-width: 960px;
   margin: 0 auto;
 }
@@ -77,6 +77,7 @@ label:hover{
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
 }
+
 .img-wrap{
   overflow: hidden;
   height: 0;
