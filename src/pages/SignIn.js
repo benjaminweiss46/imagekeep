@@ -70,7 +70,7 @@ const SignIn = () => {
             Sign up here
           </Link>{" "}
           <br />{" "}
-          <Link to = "passwordReset" className="reset-password-link">
+          <Link to = "PasswordReset" className="reset-password-link">
             Forgot Password?
           </Link>
         </p>
