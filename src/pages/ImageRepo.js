@@ -3,7 +3,8 @@ import ImageGrid from '../comps/ImageGrid';
 import Modal from '../comps/Modal';
 import Title from '../comps/Title';
 import UploadForm from '../comps/UploadForm';
-import { UserContext } from '../providers/UserProvider'
+import { auth } from '../firebase/config'
+import { UserContext } from '../providers/UserProvider';
 function ImageRepo() {
   const [selectedImg, setSelectedImg] = useState(null);
   const user = useContext(UserContext);
@@ -13,6 +14,7 @@ function ImageRepo() {
       <UploadForm/>
       <ImageGrid setSelectedImg={setSelectedImg}/>
       { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/> }
+      <button  onClick = {() => {auth.signOut()}}>Sign out</button>
     </div>
   );
 }

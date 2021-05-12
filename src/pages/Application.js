@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext, userContext } from "react";
 import { Router } from "@reach/router";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import ImageRepo from "./ImageRepo";
 import PasswordReset from "./PasswordReset.js";
+import { UserContext } from "../providers/UserProvider"
 function Application() {
-  const user = null;
+  const user = useContext(UserContext);
   return (
         user ?
         <ImageRepo />
